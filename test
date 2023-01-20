@@ -1,0 +1,79 @@
+[
+    {
+        "id": "39c49a533962c633",
+        "type": "tab",
+        "label": "フロー 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "81d5a45ec01507fc",
+        "type": "http request",
+        "z": "39c49a533962c633",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://www.eb.pref.okinawa.jp/js/chart/dam-youryou.csv",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 430,
+        "y": 180,
+        "wires": [
+            [
+                "d83c1db0043e9bbc"
+            ]
+        ]
+    },
+    {
+        "id": "ef590dad4f5f2e8f",
+        "type": "inject",
+        "z": "39c49a533962c633",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 180,
+        "wires": [
+            [
+                "81d5a45ec01507fc"
+            ]
+        ]
+    },
+    {
+        "id": "d83c1db0043e9bbc",
+        "type": "ui_text",
+        "z": "39c49a533962c633",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "text",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 630,
+        "y": 180,
+        "wires": []
+    }
+]
